@@ -1,0 +1,32 @@
+﻿@model CustomHTMLHelperInCoreMvc.Models.Employee
+
+@{
+    ViewBag.Title = "Employee Details";
+
+}
+
+<div>
+    <h4>Employee Details</h4>
+    <hr />
+    <p>
+        Employee Id : @Html.DisplayFor(model => model.Id)
+    </p>
+    <p>
+        Full Name: @Html.DisplayFor(model => model.FullName)
+    </p>
+    <p>
+        Designation: @Html.DisplayFor(model => model.Designation)
+    </p>
+    <p>
+        Department: @Html.DisplayFor(model => model.Department)
+    </p>
+    <p>
+        Photo:
+        @*<img src="~/Images/User.webp" alt="@Model.AlternateText" height="200" width="200" />*@
+        @*@Html.Image(Model.Photo, Model.AlternateText,"150","150",null)*@
+        @CustomHTMLHelper.Image(Model.Photo, Model.AlternateText,"150","150",null)
+    </p>
+    @* <p>
+    AlternateText: @Html.DisplayFor(model => model.AlternateText)
+    </p>*@
+</div>
